@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="board">
+	<select id="selectBoard" resultType="com.ym.board.vo.BoardVO">
+		SELECT idx, title, contents, writer, regdate, flag FROM tb_board
+	</select>
+	
+	<insert id="regBoard" parameterType="com.ym.board.vo.BoardVO">
+		insert into tb_board (TITLE, CONTENTS, WRITER, REGDATE, FLAG) values (#{title}, #{contents} , NULL, now(), 'N')
+	</insert>
+
+	<select id="detailBoard" resultType="com.ym.board.vo.BoardVO" parameterType="int">
+		SELECT idx, title, contents, writer, regdate, flag FROM tb_board where idx=${value}
+	</select>
+	<!-- 
+		#과 $차이
+		bind 변수를 사용하는지 안하는지의 차이
+		$ - String으로 박힌다. bind변수로 넘어가지 않는 경우만 사용 / 디비의 부하가 있음(성능저하)
+		# - ?로 바껴서 넘어간다. (파라미터 정보는 무조건 #을 쓴다)
+	
+	-->
+	
+	<delete id="deleteInfo" parameterType="String">
+		DELETE from tb_board where idx=${value}
+	</delete>
+</mapper>
