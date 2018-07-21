@@ -39,7 +39,7 @@ public class BoardController {
 	@RequestMapping(value="/regView", method = RequestMethod.GET)
 	public String regView(Model model) {
 		
-		return "insert/contents";
+		return "board/contents";
 	}
 	
 	@RequestMapping(value="/reg", method = RequestMethod.POST)
@@ -61,7 +61,7 @@ public class BoardController {
 	List<BoardVO> list = boardService.detailView(idx);
 	model.addAttribute("list", list);
 	
-	return "update/updateView";
+	return "board/updateView";
 	}
 	
 	@RequestMapping(value="/detailView", method = RequestMethod.GET)
@@ -70,7 +70,7 @@ public class BoardController {
 		model.addAttribute("list", list);
 		model.addAttribute("num", idx);
 		
-		return "select/boardDetail";
+		return "board/boardDetail";
 	}
 
 }
