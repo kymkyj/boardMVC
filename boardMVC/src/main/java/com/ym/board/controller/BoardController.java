@@ -20,12 +20,6 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
-		
-		return "index";
-	}
-	
 	@RequestMapping(value = "/selectBoard", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		List<BoardVO> list = boardService.selectBoard();
