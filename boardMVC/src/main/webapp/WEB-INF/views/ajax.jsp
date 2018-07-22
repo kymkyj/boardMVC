@@ -9,14 +9,14 @@
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
  
 <script type="text/javascript" language="javascript">
-    $(document).ready(function(){
+	$(document).ready(function(){
         $.ajax({
             type : "GET",
             url : "/index",
             // dataType : "",
-            /* error : function(){
+            	error : function(){
                 alert('통신실패!!');
-            }, */
+            }, 
             success : function(data){
                 alert("통신데이터 값 : " + data) ;
                 $("#dataArea").html(data) ;
@@ -26,7 +26,6 @@
 </script>
 </head>
 <body>
-	<h1>TEST</h1>
-    <!-- <div id="dataArea"></div> -->
+	
 </body>
 </html>
