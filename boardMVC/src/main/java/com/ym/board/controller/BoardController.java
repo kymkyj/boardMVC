@@ -1,7 +1,6 @@
 package com.ym.board.controller;
 
 import java.util.List;
-import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,16 +18,6 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;
-	
-	@RequestMapping(value = "/selectBoard", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		List<BoardVO> list = boardService.selectBoard();
-		if (list.size() != 0)
-
-			model.addAttribute("list", list);
-
-		return "home";
-	}
 	
 	@RequestMapping(value="/regView", method = RequestMethod.GET)
 	public String regView(Model model) {

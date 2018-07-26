@@ -2,8 +2,10 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
+<script src="resource/js/jquery.min.js"></script>
+<script src="resource/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/resources/css/login.css">
-<form action="#" style="border:1px solid #ccc">
+<form action="/loginCheck" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <hr>
@@ -24,7 +26,6 @@
     -->
     <div class="clearfix">
       <button type="submit" class="loginBtn">Sign Up</button>
-      <button type="button" class="cancelBtn">Cancel</button>
     </div>
   </div>
 </form>
