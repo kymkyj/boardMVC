@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="User">
-	<select id="loginCheck" parameterType="String">
-		SELECT id from user where id=#{value}
+	<select id="loginCheck" parameterType="com.ym.user.vo.UserVO" resultType="com.ym.user.vo.UserVO">
+		SELECT id from user where id=#{id} and password=#{password} 
 	</select>
 </mapper>

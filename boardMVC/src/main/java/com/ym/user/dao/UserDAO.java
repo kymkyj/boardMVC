@@ -1,7 +1,9 @@
 package com.ym.user.dao;
 
+import com.ym.user.vo.UserVO;
+
 public interface UserDAO {
 
-	void loginCheck(String userid) throws Exception;
+	UserVO loginCheck(UserVO userVO) throws Exception;
 
 }

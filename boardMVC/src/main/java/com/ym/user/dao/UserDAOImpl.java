@@ -4,6 +4,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ym.user.vo.UserVO;
+
 @Repository
 public class UserDAOImpl implements UserDAO{
 
@@ -11,8 +13,8 @@ public class UserDAOImpl implements UserDAO{
 	private SqlSession template;
 	
 	@Override
-	public void loginCheck(String userid) throws Exception {
-		template.selectOne("UserDAO.loginCheck", userid);
+	public UserVO loginCheck(UserVO userVO) throws Exception {
+		return template.selectOne("User.loginCheck", userVO);
 	}
 
 	

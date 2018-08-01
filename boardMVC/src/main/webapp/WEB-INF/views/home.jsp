@@ -4,26 +4,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="resource/css/bootstrap.min.css">
   <link rel="stylesheet" href="/resources/css/home.css">
-  <script src="resource/js/jquery.min.js"></script>
-  <script src="resource/js/bootstrap.min.js"></script>
+  <script src="/resources/js/jquery-1.11.2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script>
   	$(document).ready(function(){
   		$("#regTable").click(function(){
   			location.href="/regView";
-  			// alert(1);
   		});
   		$('#logoutBtn').click(function(){
-  			alert("1");
+  			location.href="/logout";
   		});
-  	});
+  	}); 
   </script>
 </head>
 <body>
 <div>
-	<span>
-		<label>${userid}님 로그인 /</label>
-		<button type="button" id="logoutBtn">로그아웃</button>
-	</span>
+		<span id="ajax1">
+			<label>${userid}님 로그인 /</label>
+			<button type="button" id="logoutBtn">로그아웃</button>
+		</span>
+		<span id="ajax2" hidden="hidden">
+			<input type="text" name="userid" placeholder="userid">
+			<input type="password" name="password" placeholder="password">
+			<input type="button" id="loginBtn" value="로그인">
+		</span>
 </div>
 
 <div class="container">
