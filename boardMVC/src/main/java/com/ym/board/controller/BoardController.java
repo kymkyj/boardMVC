@@ -18,10 +18,10 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;
-	
+
 	@RequestMapping(value="/regView", method = RequestMethod.GET)
 	public String regView(Model model) {
-		
+		System.out.println("111");
 		return "board/contents";
 	}
 	
